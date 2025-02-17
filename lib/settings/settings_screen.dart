@@ -16,7 +16,7 @@ import 'settings.dart';
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
-  static const _gap = SizedBox(height: 60);
+  static const _gap = SizedBox(height: 600);
 
   @override
   Widget build(BuildContext context) {
