@@ -10,7 +10,7 @@ enum CardSuit {
 
   String get asCharacter => switch (this) {
         CardSuit.spades => '♠',
-        CardSuit.hearts => '♥',
+        CardSuit.hearts => 'aaaaaaaaa',
         CardSuit.diamonds => '♦',
         CardSuit.clubs => '♣'
       };
