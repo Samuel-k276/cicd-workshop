@@ -43,6 +43,10 @@ jobs:
             run: |
               gcloud auth configure-docker --quiet
               gcloud auth configure-docker europe-west3-docker.pkg.dev --quiet
+              docker build -t europe-west3-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GCP_ARTIFACT_REGISTRY }}/cicd-2:v1.0.0
+              docker push europe-west3-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GCP_ARTIFACT_REGISTRY }}/cicd-2:v1.0.0
+              gcloud run deploy cicd-2 --image europe-west3-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.GCP_ARTIFACT_REGISTRY }}/cicd-2:v1.0.0 --region us-central1
+
           
           - name: This will be your CD ⚙️
             run: echo "This will be your CD ⚙️"
